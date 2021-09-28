@@ -1,0 +1,16 @@
+{
+  "name": "mean-games",
+  "version": "1.0.0",
+  "description": "This is my MEAN GEAMES",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expess": "0.0.1-security",
+    "express": "^4.17.1"
+  }
+}
