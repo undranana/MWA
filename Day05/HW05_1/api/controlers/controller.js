@@ -80,7 +80,7 @@ deleteStudent = function(req, res) {
 updateStudent = function(req, res) {
     Students.findById(req.params.studentID).exec(function(err, student) {
         if (err) {
-            res.status(500).json({"message": "Error finding game"});
+            res.status(500).json({"message": "Error finding student"});
         } else {
             if (req.body.name) {
                 student.name = req.body.name;
@@ -101,7 +101,7 @@ updateStudent = function(req, res) {
 replaceStudent = function(req, res) {
     Students.findById(req.params.studentID).exec(function(err, student) {
         if (err) {
-            res.status(500).json({"message": "Error finding game"});
+            res.status(500).json({"message": "Error finding student"});
         } else {
             if (!student) {
                 res.status(404).json({"message": "Student not found"});
