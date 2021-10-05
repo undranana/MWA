@@ -1,4 +1,12 @@
 const mongoose = require("mongoose");
+
+let courseSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    }
+})
+
 let studentsSchema = mongoose.Schema({
     name : {
         type : String,
@@ -10,10 +18,7 @@ let studentsSchema = mongoose.Schema({
         min : 1,
         default : 1
     },
-    studentID : {
-        type : Number,
-        required : true
-    }
+    courses: [courseSchema]
 });
 
 mongoose.model("Students", studentsSchema,"students");

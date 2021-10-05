@@ -64,7 +64,6 @@ addStudent = function(req, res){
 deleteStudent = function(req, res) {
     console.log("Delete student");
     const studentID = req.params.studentID;
-    console.log(req.params);
     Students.findById(studentID).deleteOne().exec(function(err, response) {
         if (err) {
             res.status(500).json({"message" : "Error deleting a document" + err});
@@ -80,7 +79,7 @@ deleteStudent = function(req, res) {
 updateStudent = function(req, res) {
     Students.findById(req.params.studentID).exec(function(err, student) {
         if (err) {
-            res.status(500).json({"message": "Error finding student"});
+            res.status(500).json({"message": "Error finding students"});
         } else {
             if (req.body.name) {
                 student.name = req.body.name;
