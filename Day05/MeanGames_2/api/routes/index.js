@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const controllerGames = require("../controllers/games_controler");
+const controllerPublisher = require("../controllers/publisher_controller");
 
 router.route("/games")
 .get(controllerGames.gamesGetAll)
@@ -11,5 +12,12 @@ router.route("/games/:gameId")
 .delete(controllerGames.deleteGame)
 .patch(controllerGames.updateGame)
 .put(controllerGames.replaceGame);
+
+router.route("/games/:gameId/publishers")
+.get(controllerPublisher.getOne)
+.post(controllerPublisher.addOne)
+.delete(controllerPublisher.deleteOne)
+.patch(controllerPublisher.updateOne)
+.put(controllerPublisher.replaceOne);
 
 module.exports = router;

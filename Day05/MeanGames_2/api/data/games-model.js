@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const publisherSchema = new mongoose.Schema({
     name: String,
-    address: String
+    country: String
 });
 
 const gameSchema = new mongoose.Schema({
