@@ -1,19 +1,16 @@
 const mongoose = require("mongoose");
+
+let famousPlacesSchema = mongoose.Schema({
+    name: String
+})
+
 let provinceSchema = mongoose.Schema({
     name : {
         type : String,
         required : true
     },
-    gpa : {
-        type : Number,
-        max : 4,
-        min : 1,
-        default : 1
-    },
-    studentID : {
-        type : Number,
-        required : true
-    }
+    population : String,
+    famousPlaces : [famousPlacesSchema]
 });
 
 mongoose.model("Provinces", provinceSchema,"provinces");
