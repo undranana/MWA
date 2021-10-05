@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 const publisherSchema = new mongoose.Schema({
     name: String,
-    address: String
+    country: String
+});
+
+const reviewSchema = new mongoose.Schema({
+    name: String,
+    review: String,
+    date: String
 });
 
 const gameSchema = new mongoose.Schema({
@@ -19,7 +25,8 @@ const gameSchema = new mongoose.Schema({
         max: 5,
         "default": 1
     },
-    publisher: publisherSchema
+    publisher: publisherSchema,
+    reviews: [reviewSchema]
 });
 
 mongoose.model("Game",gameSchema, "games"); //name of the model | schema | name of the collection -- compiling the model
