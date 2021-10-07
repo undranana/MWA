@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanGames">
+	<head>
+		<title>The MEAN games</title>
+        <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+        <link href="css/custom.css" type="text/css" rel="stylesheet"/>
+        <meta charset="UTF-8"/>
+    </head>
+	<body>
+        <!-- <h1>THE MEAN GAMES MAIN PAGE</h1> -->
+
+        <div ng-view>
+
+        </div>
+    
+        <footer class = "footer">
+            <div class = "container">
+                <p class = "text-muted text-center">
+                    <a href = "https://www.miu.edu/" target = "_blank">
+                    <img src = "/img/logo_1.png" height = "60"alt = "ComPro logo">
+                    </a>
+                    <br/>
+                    <small class="text-black-50 text-center">&copy; 
+                        2021 Maharishi International 
+                        University. All Rights Reserved. 
+                    </small>
+                </p>
+            </div>
+        </footer>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script> -->
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/gamesFactory/gamesFactory.js"></script>
+        <script src="angular-app/game-list/game-list-controller.js"></script>
+        <script src="angular-app/game-one/game-one-controller.js"></script>
+        <script src="angular-app/main/main-controller.js"></script>
+        <script src="angular-app/game-rating/game-rating-directive.js"></script>
+    </body>
+</html>
