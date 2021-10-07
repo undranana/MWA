@@ -1,0 +1,6 @@
+<h1>{{vm.title}}</h1>
+<ul>
+    <li ng-repeat="province in vm.provinces">
+        <a ng-href="#!/provinces/{{province._id}}">{{province.name}}</a>
+    </li>
+</ul>
