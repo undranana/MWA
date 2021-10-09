@@ -1,7 +1,39 @@
 const mongoose = require("mongoose");
 const Job = mongoose.model("Job");
 
+runGeoSearch = function(req, res) {
+    const lng = parseFloat(req.query.lng);
+    const lat = parseFloat(req.query.lat);
+
+    console.log("geo search");
+    console.log(lng,lat);
+
+    const minDist = 0;
+    const maxDist = 1000;
+    const query = {
+        coordinates:{
+            $near: {
+                $geometry: {
+                    type:"Point",
+                    cootrdinates: [lng, lat]
+                },
+                $maxDistance: maxDist,
+                $minDistance: minDist
+            }
+        }
+    }
+    Job.find(query).exec(function(err, jobs){
+        console.log("In geo search");
+        res.status(200).json({"message" : jobs});
+    });
+}
+
 getAll = function(req, res) {
+    if (req.query && req.query.lng) {
+        runGeoSearch(req, res);
+        return;
+    }
+
     let offset = 0;
     let count = 10;
     const maxCount = 10;

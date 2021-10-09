@@ -10,7 +10,11 @@ const jobSchema = mongoose.Schema({
     description: String,
     experience: String,
     skills: [String],
-    postDate: String
+    postDate: String,
+    coordinates: {
+        type: [Number],
+        index: "2dsphere"
+    }
 });
 
 mongoose.model("Job", jobSchema, "jobs");
