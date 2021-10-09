@@ -1,0 +1,25 @@
+{
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "description": "jobSearch assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MEAN",
+    "CRUD",
+    "project"
+  ],
+  "author": "Undraa",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.9",
+    "nodemon": "^2.0.13"
+  }
+}

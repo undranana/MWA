@@ -1,0 +1,17 @@
+<h1>{{vm.formTitle}}</h1>
+<ul>
+    <li ng-repeat="job in vm.jobs.data">
+        <a ng-href="#!/jobs/{{job._id}}">{{job.title}}</a><button ng-click="vm.deleteJob(job._id)">Delete</button>
+    </li>
+</ul>
+
+<button ng-click="vm.joblistbtn()">job list</button>
+<form name="vm.addJobForm" ng-submit="vm.addJob()">
+    Title: <input type="text" name="jobTitle" ng-model="vm.newJob.title"></input><br/>
+    Salary: <input type="text" pattern="[0-9]{0,}" ng-model="vm.newJob.salary"></input><br/>
+    Description: <input type="text" ng-model="vm.newJob.description"></input><br/>
+    Experience: <input type="text" ng-model="vm.newJob.experience"></input><br/>
+    Skills: <input type="text" ng-model="vm.newJob.skills"></input><br/>
+    Post Date: <input type="text"  ng-model="vm.newJob.postDate"></input><br/>
+    <button type="submit" name="submit">Submit</button>
+</form>

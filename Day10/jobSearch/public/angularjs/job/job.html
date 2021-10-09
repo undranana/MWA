@@ -1,0 +1,19 @@
+<h1>{{vm.title}} {{vm.job.title}}</h1>
+<!-- <p>
+    Title: {{vm.job.title}} <br/>
+    Salary: {{vm.job.salary}} <br/>
+    Description: {{vm.job.description}} <br/>
+    Experience: {{vm.job.experience}} <br/>
+    Skills: {{vm.job.skills}} <br/>
+    Post date: {{vm.job.postDate}} <br/>
+</p> -->
+
+<p>
+    Title: <input type="text" name="jobTitle" ng-model="vm.job.title"></input><br/>
+    Salary: <input type="text" name="jobTitle" ng-model="vm.job.salary"></input><br/>
+    Description: <input type="text" name="jobTitle" ng-model="vm.job.description"></input><br/>
+    Experience: <input type="text" name="jobTitle" ng-model="vm.job.experience"></input><br/>
+    Skills: <input type="text" name="jobTitle" ng-model="vm.job.skills"></input><br/>
+    Post date: <input type="text" name="jobTitle" ng-model="vm.job.postDate"></input><br/>
+    <button ng-click="vm.updateJob()">Update</button>
+</p>
