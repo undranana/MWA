@@ -11,7 +11,7 @@ runGeoSearch = function(req, res) {
     const minDist = 0;
     const maxDist = 1000;
     const query = {
-        coordinates:{
+        location2:{
             $near: {
                 $geometry: {
                     type:"Point",
@@ -29,6 +29,7 @@ runGeoSearch = function(req, res) {
 }
 
 getAll = function(req, res) {
+    console.log(req.query);
     if (req.query && req.query.lng) {
         runGeoSearch(req, res);
         return;
