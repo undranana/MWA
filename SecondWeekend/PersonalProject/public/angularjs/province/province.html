@@ -1,0 +1,10 @@
+<h1>{{vm.title}} {{vm.province.name}}</h1>
+<p>
+    Population: {{vm.province.population}} <br/>
+    Popular places:<br/>
+    <ul>
+        <li ng-repeat="place in vm.province.famousPlaces">{{place.name}}</li>
+    </ul>
+
+</p>
+<a ng-href="#!/provinces/{{vm.province._id}}/update">Update isnformation</a>

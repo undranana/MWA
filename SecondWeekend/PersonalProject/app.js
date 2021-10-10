@@ -7,6 +7,9 @@ const router = require("./api/routes/index");
 app.use(express.urlencoded({extended : false}));
 app.use(express.json({extended : false}));
 
+app.use("/node_modules", express.static(path.join(__dirname,"node_modules")));
+app.use(express.static(path.join(__dirname,"public")));
+
 app.use("/api",router);
 
 app.set("port", 3000);

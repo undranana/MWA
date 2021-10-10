@@ -1,0 +1,14 @@
+<h1>Registration</h1>
+
+<div class="card border-info mb-3" style="max-width: 20rem;">
+    <div class="card-header"></div>
+    <div class="card-body">
+        <span class="card-text">Username: </span>
+        <input  class="form-control" ng-model="vm.newUser.username" placeholder="Enter username">
+        <span class="card-text">Name: </span>
+        <input  class="form-control" ng-model="vm.newUser.name" placeholder="Enter name">
+        <span class="card-text">Password: </span>
+        <input type="password" class="form-control" ng-model="vm.newUser.password" placeholder="Enter password">
+        <button type="button" ng-click="vm.createUser()" class="btn btn-primary">Submit</button>
+    </div>
+  </div>

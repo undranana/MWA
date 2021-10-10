@@ -30,11 +30,11 @@ getAllProvinces = function(req, res) {
 }
 getOneProvince = function (req, res) {
     console.log("Get one province");
-    let provincetId = req.params.provincetId;
-    if (!mongoose.isValidObjectId(provincetId)) {
+    let provinceId = req.params.provinceId;
+    if (!mongoose.isValidObjectId(provinceId)) {
         res.status(400).json({"message" : "Invalid ID"});
     } else {
-        Provinces.findById(provincetId).exec(function(err, province) {
+        Provinces.findById(provinceId).exec(function(err, province) {
             if (!province) {
                 res.status(404).json({"message" : "Province not found"});
             } else {
@@ -62,9 +62,9 @@ addProvince = function(req, res){
 }
 deleteProvince = function(req, res) {
     console.log("Delete province");
-    const provincetId = req.params.provincetId;
+    const provinceId = req.params.provinceId;
     console.log(req.params);
-    Provinces.findById(provincetId).deleteOne().exec(function(err, response) {
+    Provinces.findById(provinceId).deleteOne().exec(function(err, response) {
         if (err) {
             res.status(500).json({"message" : "Error deleting a document" + err});
         } else {
@@ -77,7 +77,7 @@ deleteProvince = function(req, res) {
     });
 }
 updateProvince = function(req, res) {
-    Provinces.findById(req.params.provincetId).exec(function(err, province) {
+    Provinces.findById(req.params.provinceId).exec(function(err, province) {
         if (err) {
             res.status(500).json({"message": "Error finding province"});
         } else {
@@ -99,7 +99,8 @@ updateProvince = function(req, res) {
 }
 
 replaceProvince = function(req, res) {
-    Provinces.findById(req.params.provincetId).exec(function(err, province) {
+    console.log("Replace Province");
+    Provinces.findById(req.params.provinceId).exec(function(err, province) {
         if (err) {
             res.status(500).json({"message": "Error finding student"});
         } else {

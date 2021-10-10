@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const dbname = "provinces";
 const dburl = "mongodb://localhost:27017/" + dbname;
 require("./province-model");
+require("./user-model");
 
 mongoose.connect(dburl);
 

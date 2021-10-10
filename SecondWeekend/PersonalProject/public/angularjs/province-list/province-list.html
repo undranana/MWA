@@ -1,0 +1,17 @@
+<h1>{{vm.title}}</h1>
+
+Filter: <input type="text"  ng-model="filterText"></input>
+<ul>
+    <li  ng-repeat="province in vm.provinces | filter: filterText">
+        <a ng-href="#!/provinces/{{province._id}}">{{province.name}}</a>  <button class="badge rounded-pill bg-warning" ng-click="vm.delete(province._id)">Delete</button>
+    </li>
+</ul>
+<div class="card border-primary mb-3" style="max-width: 25rem;">
+    <span class="card-header">Add province</span><br/>
+    <div class="card-body">
+        Name: <input type="text"  name="lat" ng-model="vm.newprovince.name"></input><br/>
+        Population: <input type="text"  name="lng" ng-model="vm.newprovince.population"></input><br/>
+        <!-- Famous place: <input type="text" name="lng" ng-model="vm.newprovince.newFamousPlace"></input><br/> -->
+        <button ng-click="vm.addProvince()">Add</button>
+    </div>
+</div>

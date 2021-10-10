@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const controller = require("./../controllers/controller");
 const controller_famousPlaces = require("./../controllers/famPlaces_controller");
+const controller_users = require("./../controllers/usersController");
+const bcrypt= require("bcrypt-nodejs");
 
 router.route("/provinces/")
 .get(controller.getAllProvinces)
@@ -22,6 +24,9 @@ router.route("/provinces/:provinceId/famousplaces/:placeID")
 .delete(controller_famousPlaces.deleteOne)
 .patch(controller_famousPlaces.updateOne)
 .put(controller_famousPlaces.replaceOne);
+
+router.route("/users/")
+.post(controller_users.addUser);
 
 
 module.exports = router;

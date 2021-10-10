@@ -1,0 +1,11 @@
+<h1>{{vm.title}}</h1>
+<p>
+    Name: <input type="text" name="name" ng-model="vm.province.name"></input><br/>
+    Population: <input type="text" name="population" ng-model="vm.province.population"></input><br/><br/><br/>
+    Popular places:<br/>
+    <ul>
+        <li ng-repeat="place in vm.province.famousPlaces">{{place.name}}</li>
+    </ul>
+    <button ng-click="vm.updateProvince()">Update</button>
+
+</p>

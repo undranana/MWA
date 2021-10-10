@@ -52,25 +52,26 @@ getOne = function (req, res) {
 addOne = function(req, res){
     console.log("Add province");
     console.log(req.body);
-    let newProvince = {
-        "name" : req.body.name,
-        "population" : parseInt(req.body.population)
-    };
-    Provinces.create(newProvince, function(err, province) {
+    let provinceId = req.params.provinceId;
+    Provinces.findById(provinceId).exec(function(err, province) {
         if (err) {
-            res.status(500).json({"message" : "Error creating province" + err});
+            res.status(500).json({"message" : "Error finding province" + err});
         } else {
             const newPlace = {
                 name: req.body.name
             }
-            province.famousPlaces.push(newPlace);
-            province.save(function(err, result){
-                if(err) {
-                    res.status(500).json(err);
-                } else {
-                    res.status(201).json(result);
-                }
-            });
+            if (!province) {
+                res.status(404).json({"message" : "Province not found" + err})
+            } else {
+                province.famousPlaces.push(newPlace);
+                province.save(function(err, result){
+                    if(err) {
+                        res.status(500).json(err);
+                    } else {
+                        res.status(201).json(result);
+                    }
+                });
+            }
         }
     })
 
