@@ -3,7 +3,7 @@ const router = express.Router();
 const controller = require("./../controllers/controller");
 const controller_famousPlaces = require("./../controllers/famPlaces_controller");
 const controller_users = require("./../controllers/usersController");
-const bcrypt= require("bcrypt-nodejs");
+
 
 router.route("/provinces/")
 .get(controller.getAllProvinces)
