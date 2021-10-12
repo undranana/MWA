@@ -1,0 +1,15 @@
+{
+  "name": "5_app01",
+  "version": "1.0.0",
+  "description": "Week3Day2 assignment",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Undraa",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
