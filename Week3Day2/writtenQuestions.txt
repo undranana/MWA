@@ -1,7 +1,9 @@
 1- Why do we say Node uses an Event-Driven-Architecture?
 An Event-Driven-Architecture is a software architecture that creates, reacts to events. 
-We bind function to sertain events and that is how we create Event-driven applications. Like website, where 
+We bind function to sertain events and that is how we create Event-driven applications. 
 
 2- Can you write Node code that is not event driven? Why?
+Yes, for example a fibbonachi function.
 
 3- Why does Chrome use a layout tree? 
+To arrange elements on the screen.
